@@ -11,7 +11,7 @@ int main(){
 	cout << "Our C++ Calculator\n";
 	
 	while('n' != again){
-		cout << "(A)dd? ";
+		cout << "(A)dd or (S)ubtract? ";
 		cin >> op;
 		
 		cout << "Enter your first number: ";
@@ -19,8 +19,15 @@ int main(){
 		cout << "Enter your second number: ";
 		cin >> num2;
 		
-		cout << endl << num1 << " + " 
-			<< num2 << " = " << (num1 + num2) << endl;
+		if(('A' == op) || ('a' == op)){
+			cout << endl << num1 << " + " 
+				<< num2 << " = " << (num1 + num2) << endl;
+		} else if (('S' == op) || ('s' == op)) {
+			cout << endl << num1 << " - " 
+				<< num2 << " = " << (num1 - num2) << endl;
+		} else {
+			cout << op << " is not a valid option..." << endl;
+		}
 		
 		cout << "\nDo you want to use Calculator again (Y/n)? ";
 		cin >> again;
